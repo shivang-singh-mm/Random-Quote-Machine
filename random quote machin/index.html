@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <!--react js.......  -->
+        
+        <script>
+            window.onload = init;
+            var COLORBANK = ['#f44336', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', '#472E32', '#BDBB99', '#77B1A9', '#73A857'];
+            const QUOTEBANK = [{quote: "Life isn’t about getting and having, it’s about giving and being.", author: '-\"Kevin Kruse\"'},
+                               {quote: 'Strive not to be a success, but rather to be of value.', author: '-\"Albert Einstein\"'},
+                               {quote:'I attribute my success to this: I never gave or took any excuse.', author: '-\"Florence Nightingale"'},
+                               {quote: 'The most difficult thing is the decision to act, the rest is merely tenacity.', author:'-\"Amelia Earhart"'},
+                               {quote:'Definiteness of purpose is the starting point of all achievement.', author:'-\"W. Clement Stone"'},
+                               {quote:'We must balance conspicuous consumption with conscious capitalism.', author:'-\"Kevin Kruse\"'},
+                               {quote:'We become what we think about.', author:'-\"Earl Nightingale\"'},
+                               {quote:'The most common way people give up their power is by thinking they don’t have any.', author:'-\"Alice Walker\"'},
+                               {quote:'The mind is everything. What you think you become.', author:'-\"Buddha\"'},
+                               {quote:'An unexamined life is not worth living.', author:'-\"Socrates\"'},
+                               {quote:'Eighty percent of success is showing up.', author:'-\"Woody Allen\"'},
+                               {quote:'Winning isn’t everything, but wanting to win is.', author:'-\"Vince Lombardi\"'},];
+            function init() {
+                console.log('loaded');
+                document.getElementById('text').innerText='With great power comes great reponsibilities.';
+                document.getElementById('author').innerText='-\"Uncle Ben\"';
+                $(doccument).redy(function(){
+                    $("#font").css("color","#f44336")
+                })
+            }
+            function handleClick() {
+                let number = Math.floor(Math.random() * QUOTEBANK.length);
+                document.getElementById('text').innerText=QUOTEBANK[number].quote;
+                document.getElementById('author').innerText= QUOTEBANK[number].author;
+                $(document).ready(function(){
+                    $("#color").css("background-color", COLORBANK[number]);
+                    $("#font").css("color",COLORBANK[number]);
+                })
+            }
+        </script>
+    </head>
+    
+    <!-- styling body....-->
+    <style> 
+     .main {
+        text-align: center;
+        margin: 175px auto;
+        max-width: 400px;
+        font-size: 25px;
+        padding: auto auto 55px auto; 
+        background-color: white; 
+        border-style: solid;
+    border-radius:10%;}
+
+    #author{
+        text-align: right;
+        font-size: 17px;
+    }
+    .hover:hover {
+        opacity: 0.;
+    }
+    </style>
+    <link rel="stylesheet" href="random.css">
+    
+    
+    <!-- html main body-->
+    <body class="class" id="color"><div class="main">
+    <h1 style="margin: 20px; font-family:'Brush Script MT'">Random Quotes</h1>
+    <br />
+    <wrapper id="quote-box"><div id="font">
+        <div id="text"></div>
+        <div id="author"></div></div>
+        <button id="new-quote" style="margin: auto auto 10px auto;" class="btn btn-primary hover" onClick="handleClick()">Next Quote</button>
+        <a id="tweet-quote" href="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22Whether%20you%20think%20you%20can%20or%20you%20think%20you%20can%E2%80%99t%2C%20you%E2%80%99re%20right.%22%20Henry%20Ford"><i class="fa fa-tumblr-square fa-align-right" aria-hidden="true"></i></a></div>
+    </wrapper>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </body>
+</html>
